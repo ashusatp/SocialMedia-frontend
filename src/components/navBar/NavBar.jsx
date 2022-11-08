@@ -8,7 +8,12 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import PersonIcon from "@mui/icons-material/Person";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-const NavBar = () => {
+import { DarkModeContext } from "../../context/DarkModeContextProvider";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContextProvider";
+const NavBar = ({theme,changeTheme}) => {
+  const {darkMode,toggle} = useContext(DarkModeContext);
+  const {currentUser} = useContext(AuthContext);
   return (
     <div className="navBar">
       <div className="left">
@@ -16,7 +21,9 @@ const NavBar = () => {
           <span>Smedia</span>
         </Link>
         <HomeIcon />
-        <DarkModeIcon />
+        <div className="btn" onClick={toggle}>
+         {darkMode ? <DarkModeIcon/> : <WbSunnyIcon/>}
+        </div>
         <AppsIcon />
         <div className="search">
           <SearchOutlinedIcon />
@@ -28,8 +35,8 @@ const NavBar = () => {
         <MailIcon/>
         <NotificationsIcon/>
         <div className="user">
-          <img src="https://images.pexels.com/photos/13865998/pexels-photo-13865998.jpeg?cs=srgb&dl=pexels-c%C3%A9line-13865998.jpg&fm=jpg&_gl=1*8i3zrl*_ga*MjkzMDgzMzIzLjE2NjczMTcxOTE.*_ga_8JE65Q40S6*MTY2NzQ3NzQ5MC4zLjEuMTY2NzQ3NzQ5NC4wLjAuMA.." alt="IMG" />
-          <span>Ashu</span>
+          <img src={currentUser.profilePic} alt="IMG" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>

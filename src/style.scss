@@ -1,0 +1,58 @@
+.light-theme {
+  background-color: #fff;
+}
+.dark-theme {
+  background-color: rgb(104, 104, 104);
+  color: #fff;
+
+  .leftBar {
+    
+    background-color:rgb(54, 52, 52) ;
+    
+  }
+
+  .navBar {
+    background-color: rgb(54, 52, 52);
+    color: #fff;
+    border-bottom: 1px solid rgb(68, 66, 66);
+    .left {
+      span {
+        color: rgb(26, 215, 248);
+      }
+      .search {
+        input {
+          background-color: rgb(54, 52, 52);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .rightBar {
+    .container {
+      .item {
+        -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
+        padding: 20px;
+        margin: 20px 0;
+        background-color: rgb(20, 20, 20);
+        span {
+          color: rgb(228, 228, 228);
+        }
+        .user {
+          .userInfo {
+            span {
+              font-weight: 500;
+              color: rgb(255, 255, 255);
+            }
+          }
+
+          p {
+            color: rgb(158, 158, 158);
+          }
+        }
+      }
+    }
+  }
+}
